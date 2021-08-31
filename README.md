@@ -17,15 +17,11 @@ References:
  ## Error
  
  ```js
-Uncaught TypeError: Cannot read property 'emptyArray' of undefined
-    at types.js:110
-    at createCommonjsModule (index.umd.js:10)
-    at index.js:65
+field.js:6 Uncaught TypeError: Cannot read property 'prototype' of undefined
+    at field.js:6
     at index.umd.js:4
     at index.umd.js:5
 ```
 
 ## Notes
- - The issue seems to be that the `util` object is being referenced before it is defined.
- - There are several warnings about circular dependencies during the rollup build.
- - ProtobufJS itself seems to be packaged into a bundle using browserify. This bundle seems to work. 
+- object.js and ReflectionObject var are initialized after their uses in field.js
