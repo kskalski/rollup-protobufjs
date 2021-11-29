@@ -1,3 +1,5 @@
+//import * as protoloader from "@grpc/proto-loader";
+//import * as grpc from "@grpc/grpc-js";
 import * as protobuf from "protobufjs/light";
 import * as awesome from "./awesome.json";
 
@@ -23,3 +25,6 @@ export function toMessage(awesomeField) {
 
   return buffer;
 }
+
+console.log(JSON.stringify(Array.from(toMessage("Hello")).map(x=>[x,String.fromCharCode(x)])));
+
