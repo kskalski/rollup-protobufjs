@@ -1,10 +1,10 @@
-# Rollup - Protobuf.js Issue Example
-This repository illustrates an issue packaging protobufjs inside of a bundle built by rollup.
+# Rollup - grpc-js Issue Example
+This repository illustrates an issue packaging grpc-js inside of a bundle built by rollup.
 
 References:
 
  - [https://rollupjs.org/guide/en](https://rollupjs.org/guide/en)
- - [http://dcode.io/protobuf.js/](http://dcode.io/protobuf.js/)
+ - [https://www.npmjs.com/package/@grpc/grpc-js](https://www.npmjs.com/package/@grpc/grpc-js)
  
  ## Instructions:
  
@@ -12,16 +12,19 @@ References:
  
   - `npm i`
   - `npm run build`
-  - Open `index.html` in you browser, and view the error in the console.
   
- ## Error
+ ## Output
  
- ```js
-field.js:6 Uncaught TypeError: Cannot read property 'prototype' of undefined
-    at field.js:6
-    at index.umd.js:4
-    at index.umd.js:5
+ Build process doesn't produce any output, I suppose the plugin crashes internally
+
+ ```
+> protobuf-rollup@1.0.0 build
+> rollup -c
+
+
+index.js → dist/index.umd.js...
 ```
 
-## Notes
-- object.js and ReflectionObject var are initialized after their uses in field.js
+ ## Note
+
+ The problem appears due to simply including ``import * as grpc from "@grpc/grpc-js";``, when this line is commented the build works again.

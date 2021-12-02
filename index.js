@@ -1,5 +1,5 @@
 import * as protoloader from "@grpc/proto-loader";
-//import * as grpc from "@grpc/grpc-js";
+import * as grpc from "@grpc/grpc-js";
 import * as protobuf from "protobufjs/light";
 import * as awesome from "./awesome.json";
 
