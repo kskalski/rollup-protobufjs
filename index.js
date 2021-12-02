@@ -1,4 +1,4 @@
-//import * as protoloader from "@grpc/proto-loader";
+import * as protoloader from "@grpc/proto-loader";
 //import * as grpc from "@grpc/grpc-js";
 import * as protobuf from "protobufjs/light";
 import * as awesome from "./awesome.json";
@@ -28,3 +28,7 @@ export function toMessage(awesomeField) {
 
 console.log(JSON.stringify(Array.from(toMessage("Hello")).map(x=>[x,String.fromCharCode(x)])));
 
+const package_definition = protoloader.loadSync('./example.proto');
+console.log('package', package_definition);
+//console.log(grpc.loadPackageDefinition(package_definition));
+console.log('finished');
