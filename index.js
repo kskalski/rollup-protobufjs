@@ -30,5 +30,5 @@ console.log(JSON.stringify(Array.from(toMessage("Hello")).map(x=>[x,String.fromC
 
 const package_definition = protoloader.loadSync('./example.proto');
 console.log('package', package_definition);
-//console.log(grpc.loadPackageDefinition(package_definition));
+console.log('grpc load', grpc.loadPackageDefinition(package_definition));
 console.log('finished');
